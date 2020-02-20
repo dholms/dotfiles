@@ -4,6 +4,10 @@ if [[ -d $DOTFILES/zsh/functions ]]; then
     for func in $DOTFILES/zsh/functions/*(:t); autoload -U $func
 fi
 
+#fnm
+export PATH=/home/daniel/.fnm:$PATH
+eval "`fnm env --multi`"
+
 ########################################################
 # Configuration
 ########################################################
@@ -66,7 +70,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt EXTENDED_HISTORY
 setopt HIST_REDUCE_BLANKS
-setopt SHARE_HISTORY
+unsetopt SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
 setopt COMPLETE_ALIASES
@@ -209,5 +213,17 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+
+# random aliases
+alias open="gnome-open >/dev/null 2>&1"
+alias sb="stack build --fast"
+alias fw="DEBUG=true RIO_VERBOSE=true stack run fission-web"
+alias vim="nvim"
+alias v="nvim"
+
+# setup asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 # fnm
 eval "$(fnm env --multi)"

@@ -60,7 +60,7 @@ call plug#begin('~/.config/nvim/plugged')
     set showbreak=… " show ellipsis at breaking
     set autoindent " automatically set indent of new line
     set ttyfast " faster redrawing
-    set diffopt+=vertical,iwhite,internal,algorithm:patience,hiddenoff
+    " set diffopt+=vertical,iwhite,internal,algorithm:patience,hiddenoff
     set laststatus=2 " show the status line all the time
     set so=7 " set 7 lines to the cursors - when moving vertical
     set wildmenu " enhanced command line completion
@@ -521,7 +521,7 @@ call plug#begin('~/.config/nvim/plugged')
         \ 'coc-explorer'
         \ ]
 
-        autocmd CursorHold * silent call CocActionAsync('highlight')
+        " autocmd CursorHold * silent call CocActionAsync('highlight')
 
         " coc-prettier
         command! -nargs=0 Prettier :CocCommand prettier.formatFile

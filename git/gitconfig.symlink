@@ -1,9 +1,12 @@
 # gitconfig
 [user]
-    name = Nick Nisi
-    email = nick@nisi.org
+	name = Daniel Holmgren
+	email = dtholmgren@gmail.com
+    signingkey = 1569BEC8BBD527A9
 [github]
-    user = nicknisi
+	user = dholms
+[commit]
+    gpgsign = true
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
@@ -155,7 +158,7 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = osxkeychain
+	helper = store
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
